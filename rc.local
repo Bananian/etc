@@ -15,9 +15,17 @@
 mount -o remount -o noatime /
 
 # generate new ssh host key
-if [ ! -f /etc/ssh/ssh_host_rsa_key ] || [ ! -f /etc/ssh/ssh_host_rsa_key.pub ] ; then
-	rm -f /etc/ssh/ssh_host_rsa_key*
-	dpkg-reconfigure openssh-server
+if [ ! -f /etc/ssh/ssh_host_rsa_key ] || [ ! -f /etc/ssh/ssh_host_rsa_key.pub ] || [ ! -f /etc/ssh/ssh_host_ed25519_key ] || [ ! -f /etc/ssh/ssh_host_ed25519_key.pub ]; then
+        # check for missing RAS host keys
+        if [ ! -f /etc/ssh/ssh_host_rsa_key ] || [ ! -f /etc/ssh/ssh_host_rsa_key.pub ]; then
+                rm -f /etc/ssh/ssh_host_rsa_key*
+        fi
+        # check for missing ED25519 host keys
+        if [ ! -f /etc/ssh/ssh_host_ed25519_key ] || [ ! -f /etc/ssh/ssh_host_ed25519_key.pub ]; then
+                rm -f /etc/ssh/ssh_host_ed25519_key*
+        fi
+        # (re)generate all missing keys
+        dpkg-reconfigure openssh-server
 fi
 
 # cpu frequency
