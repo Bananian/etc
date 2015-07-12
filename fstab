@@ -1,1 +1,4 @@
 # UNCONFIGURED FSTAB FOR BASE SYSTEM
+
+# 512 MB swapfile
+/swapfile1 swap swap defaults 0 0
