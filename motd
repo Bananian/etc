@@ -1,7 +1,9 @@
 
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
+------------------------------------------------------------------------ 
+Welcome to Bananian Linux!
+For news and updates check: https://www.bananian.org
+Any questions? Read the FAQ first: https://www.bananian.org/faq
 
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
+Run 'bananian-config' to set up Bananian Linux
+Run 'bananian-update' to check for distribution updates
+------------------------------------------------------------------------
