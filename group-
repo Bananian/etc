@@ -44,3 +44,5 @@ systemd-network:x:104:
 systemd-resolve:x:105:
 systemd-bus-proxy:x:106:
 crontab:x:107:
+netdev:x:108:
+ntp:x:109:

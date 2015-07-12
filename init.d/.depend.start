@@ -1,6 +1,12 @@
-TARGETS = killprocs motd bootlogs rsyslog single cron rmnologin rc.local
+TARGETS = rsyslog killprocs motd bootlogs single cron ntp loadcpufreq rsync ssh haveged cpufrequtils rmnologin rc.local
 INTERACTIVE =
 single: killprocs motd bootlogs
 cron: rsyslog
-rmnologin: motd bootlogs cron rsyslog
-rc.local: motd bootlogs cron rsyslog
+ntp: rsyslog
+loadcpufreq: rsyslog
+rsync: rsyslog
+ssh: rsyslog
+haveged: rsyslog
+cpufrequtils: loadcpufreq
+rmnologin: rsyslog motd bootlogs cron ntp cpufrequtils loadcpufreq rsync ssh haveged
+rc.local: rsyslog motd bootlogs cron ntp cpufrequtils loadcpufreq rsync ssh haveged

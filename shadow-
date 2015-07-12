@@ -1,4 +1,4 @@
-root:*:16628:0:99999:7:::
+root:$6$wLSakpE1$1Aav9oovE6ebAsgqDZRO.gXOyxLcwsD.asx54Fa2JcD64tVzfmzDBlAS4mvdiFnU5rKthNoT8gXklbesHyu2g1:16628:0:99999:7:::
 daemon:*:16628:0:99999:7:::
 bin:*:16628:0:99999:7:::
 sys:*:16628:0:99999:7:::
@@ -20,3 +20,5 @@ systemd-timesync:*:16628:0:99999:7:::
 systemd-network:*:16628:0:99999:7:::
 systemd-resolve:*:16628:0:99999:7:::
 systemd-bus-proxy:*:16628:0:99999:7:::
+ntp:*:16628:0:99999:7:::
+sshd:*:16628:0:99999:7:::

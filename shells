@@ -3,3 +3,6 @@
 /bin/dash
 /bin/bash
 /bin/rbash
+/bin/zsh
+/usr/bin/zsh
+/usr/bin/screen

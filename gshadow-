@@ -44,3 +44,5 @@ systemd-network:!::
 systemd-resolve:!::
 systemd-bus-proxy:!::
 crontab:!::
+netdev:!::
+ntp:!::
