@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#---------------------------#
+# BPI-R1 VLAN configuration #
+#---------------------------#
+#
+# This will create the following ethernet ports:
+# - eth0.101 = WAN (single port)
+# - eth0.102 = LAN (4 port switch)
+#
+# You have to adjust your /etc/network/interfaces
+#
+# Comment out the next line to enable the VLAN configuration:
+exit 0
+
+ifconfig eth0 up
+
+# The swconfig port number are:
+# |2|1|0|4|  |3|
+# (looking at front of ports)
+
+swconfig dev eth0 set reset 1
+swconfig dev eth0 set enable_vlan 1
+swconfig dev eth0 vlan 101 set ports '3 8t'
+swconfig dev eth0 vlan 102 set ports '4 0 1 2 8t'
+swconfig dev eth0 set apply 1
