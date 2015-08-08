@@ -16,7 +16,7 @@ mount -o remount -o noatime /
 
 # generate new ssh host key
 if [ ! -s /etc/ssh/ssh_host_rsa_key ] || [ ! -s /etc/ssh/ssh_host_rsa_key.pub ] || [ ! -s /etc/ssh/ssh_host_ed25519_key ] || [ ! -s /etc/ssh/ssh_host_ed25519_key.pub ]; then
-        # check for missing RAS host keys
+        # check for missing RSA host keys
         if [ ! -s /etc/ssh/ssh_host_rsa_key ] || [ ! -s /etc/ssh/ssh_host_rsa_key.pub ]; then
                 rm -f /etc/ssh/ssh_host_rsa_key*
         fi
