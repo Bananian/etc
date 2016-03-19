@@ -1,10 +1,10 @@
 TARGETS = fake-hwclock haveged urandom sendsigs rsyslog umountnfs.sh hwclock.sh networking umountfs umountroot halt reboot
 sendsigs: haveged
-rsyslog: sendsigs haveged
-umountnfs.sh: rsyslog sendsigs haveged
+rsyslog: haveged sendsigs
+umountnfs.sh: haveged rsyslog sendsigs
 hwclock.sh: rsyslog
 networking: umountnfs.sh
-umountfs: hwclock.sh umountnfs.sh urandom networking haveged
-umountroot: fake-hwclock umountfs
+umountfs: networking urandom haveged hwclock.sh umountnfs.sh
+umountroot: umountfs fake-hwclock
 halt: umountroot
 reboot: umountroot
