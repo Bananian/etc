@@ -4,7 +4,7 @@ rsyslog: haveged sendsigs bananian-settings
 umountnfs.sh: haveged rsyslog sendsigs bananian-settings
 hwclock.sh: rsyslog
 networking: umountnfs.sh
-umountfs: networking urandom haveged hwclock.sh bananian-settings umountnfs.sh
+umountfs: networking urandom haveged hwclock.sh umountnfs.sh bananian-settings
 umountroot: umountfs fake-hwclock
 halt: umountroot
 reboot: umountroot

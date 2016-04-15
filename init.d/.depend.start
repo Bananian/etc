@@ -1,13 +1,13 @@
-TARGETS = rsyslog killprocs motd bootlogs haveged bananian-settings single cron ntp loadcpufreq rsync ssh cpufrequtils rmnologin rc.local
+TARGETS = rsyslog killprocs motd bootlogs haveged single cron ntp loadcpufreq rsync ssh bananian-settings cpufrequtils rmnologin rc.local
 INTERACTIVE =
 haveged: rsyslog
-bananian-settings: rsyslog
 single: killprocs motd bootlogs
 cron: rsyslog
 ntp: rsyslog
 loadcpufreq: rsyslog
 rsync: rsyslog
 ssh: rsyslog
+bananian-settings: rsyslog
 cpufrequtils: loadcpufreq
-rmnologin: haveged rsyslog bananian-settings motd bootlogs cron ntp cpufrequtils loadcpufreq rsync ssh
-rc.local: haveged rsyslog bananian-settings motd bootlogs cron ntp cpufrequtils loadcpufreq rsync ssh
+rmnologin: haveged rsyslog motd bootlogs cron ntp cpufrequtils loadcpufreq rsync ssh bananian-settings
+rc.local: haveged rsyslog motd bootlogs cron ntp cpufrequtils loadcpufreq rsync ssh bananian-settings
